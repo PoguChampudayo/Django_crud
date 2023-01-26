@@ -7,14 +7,14 @@ POST {{baseUrl}}/products/
 Content-Type: application/json
 
 {
-  "title": "огурец",
+  "title": "test]",
   "description": "Лучшие огурцы на рынке"
 }
 
 ###
 
 # получение продуктов
-GET {{baseUrl}}/products/
+GET {{baseUrl}}/products/?page=2
 Content-Type: application/json
 
 ###
@@ -30,7 +30,7 @@ Content-Type: application/json
 ###
 
 # удаление продукта
-DELETE {{baseUrl}}/products/1/
+DELETE {{baseUrl}}/products/5/
 Content-Type: application/json
 
 ###
@@ -75,22 +75,17 @@ Content-Type: application/json
 ###
 
 # обновляем записи на складе
-PATCH {{baseUrl}}/stocks/2/
+PATCH {{baseUrl}}/stocks/3/
 Content-Type: application/json
 
 {
-  "address": "улица пушкина, а дом не колотушкина",
   "positions": [
     {
-      "product": 2,
-      "quantity": 200,
+      "product":2,
+      "quantity": 400,
       "price": 130.80
-    },
-    {
-      "product": 3,
-      "quantity": 243,
-      "price": 145
     }
+   
   ]
 }
 
@@ -103,5 +98,5 @@ Content-Type: application/json
 ###
 
 # поиск складов, где есть определенный продукт
-GET {{baseUrl}}/stocks/?search=огуре
+GET {{baseUrl}}/stocks/?search=бан
 Content-Type: application/json
